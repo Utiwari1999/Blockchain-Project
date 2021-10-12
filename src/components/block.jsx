@@ -34,7 +34,7 @@ const Block = () => {
         const newhash= await sha256(hash + (currBlock*currBlock + currNonce*currNonce).toString()+ '0'.repeat(64));
         console.log(newhash);
         sethashvalue(newhash);
-
+        console.log(hashvalue.substring(0, 4));
       }
 
     async function mine(){
@@ -56,28 +56,29 @@ const Block = () => {
         <br />
             <h1>Block</h1>
             <br />
-            <InputGroup size="sm">
-                <InputGroup.Text>Block</InputGroup.Text>
-                <FormControl onChange={keyup} name="block" value={currBlock} as="textarea" aria-label="With textarea" readonly />
-            </InputGroup>
-            <br />
-            <InputGroup size="sm">
-                <InputGroup.Text>Nonce</InputGroup.Text>
-                <FormControl value={currNonce} onChange={keyup1} as="textarea" aria-label="With textarea" />
-            </InputGroup>
-            <br />
-            <InputGroup size="sm">
-                <InputGroup.Text>Data</InputGroup.Text>
-                <FormControl value={currData} onChange={keyup2} rows="8" as="textarea" aria-label="With textarea" />
-            </InputGroup>
-            <br />
-            <InputGroup size="sm">
-                <InputGroup.Text>Hash</InputGroup.Text>
-                <FormControl value={hashvalue} as="textarea" aria-label="With textarea" readonly />
-            </InputGroup>
-            <br/>
-            <Button variant="success" onClick={()=>{mine()}}>Mine</Button>
-
+            <div style={{background: hashvalue.substring(0, 4) === '0000' ? 'rgb(223, 240, 216)' : 'rgb(250, 220, 220)', padding: '35px', borderRadius: '5px'}}>
+                <InputGroup size="sm">
+                    <InputGroup.Text>Block</InputGroup.Text>
+                    <FormControl onChange={keyup} name="block" value={currBlock} as="textarea" aria-label="With textarea" readonly />
+                </InputGroup>
+                <br />
+                <InputGroup size="sm">
+                    <InputGroup.Text>Nonce</InputGroup.Text>
+                    <FormControl value={currNonce} onChange={keyup1} as="textarea" aria-label="With textarea" />
+                </InputGroup>
+                <br />
+                <InputGroup size="sm">
+                    <InputGroup.Text>Data</InputGroup.Text>
+                    <FormControl value={currData} onChange={keyup2} rows="8" as="textarea" aria-label="With textarea" />
+                </InputGroup>
+                <br />
+                <InputGroup size="sm">
+                    <InputGroup.Text>Hash</InputGroup.Text>
+                    <FormControl value={hashvalue} as="textarea" aria-label="With textarea" readonly />
+                </InputGroup>
+                <br/>
+                <Button variant="success" onClick={()=>{mine()}}>Mine</Button>
+            </div>
         </div>
     )
 }
