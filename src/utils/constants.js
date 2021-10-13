@@ -4,6 +4,9 @@ export const API_ENDPOINT = {
     //User Service APIs
    GET_HASH: "/api/hash",
    GET_NONCE: "/api/genesis_block/",
+   GET_BLOCKCHAIN: "/api/blockchain",
+   UPDATE_BLOCK: "/api/update_block/",
+   MINE_BLOCK: "/api/mine_block/"
 
 }
 export const API_RESPONSE_STATUS = {
