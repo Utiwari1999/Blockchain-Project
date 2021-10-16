@@ -23,7 +23,10 @@ const header = () => {
             <LinkContainer to="/blockchain">
                 <Nav.Link href="/blockchain">Blockchain</Nav.Link>
             </LinkContainer>
-            <Nav.Link href="#distributed">Distributed</Nav.Link>
+            <LinkContainer to="/distributed">
+                <Nav.Link href="/distributed">Distributed</Nav.Link>
+            </LinkContainer>
+            
             <Nav.Link href="#tokens">Tokens</Nav.Link>
           </Nav>
           {/* </Navbar.Collapse> */}

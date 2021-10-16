@@ -7,6 +7,7 @@ import Header from './components/header';
 import Hash from './components/Hash';
 import Block from './components/block';
 import Blockchain from './components/Blockchain';
+import Distributed from './components/Distributed';
 import 'bootstrap/dist/css/bootstrap.css';
 
 ReactDOM.render(
@@ -18,6 +19,7 @@ ReactDOM.render(
         <Route path="/hash" component={Hash} />
         <Route path="/block" component={Block} />
         <Route path="/blockchain" component={Blockchain} />
+        <Route path="/distributed" component={Distributed} />
       </Switch>
     </Router>
   </React.StrictMode>,

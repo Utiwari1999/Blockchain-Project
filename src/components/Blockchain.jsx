@@ -73,15 +73,17 @@ const Blockchain = () => {
             <div  style={{
                     marginLeft: 'auto', 
                     marginRight: 'auto',
+                    // margin: '20px',
                     paddingLeft: "5%", 
                     paddingRight: "5%", 
                     display: 'flex', 
                     flexDirection: 'row', 
                     overflowX: 'auto',
                     // overflowY: 'hidden', 
-                    boxSizing: 'unset', 
-                    width: '200%', 
-                    whiteSpace: 'nowrap', 
+                    boxSizing: 'border-box', 
+                    width: '100%', 
+                    height:'100vh',
+                    whiteSpace: 'nowrap',  
                 }}>
                  {loading?
                  <div style={{marginTop:"90px"}}>
@@ -95,11 +97,11 @@ const Blockchain = () => {
                    
                 </div>:
                 <>   
-                <div style={{marginRight: '30px', width: '60%'}}><BlockchainComp  config={cur_state[0]} changeCurState={changeCurState} setLoading={setLoading} index={1} /></div>
-                <div style={{marginRight: '30px', width: '65%'}}><BlockchainComp  config={cur_state[1]} changeCurState={changeCurState} setLoading={setLoading} index={2}/></div>
-                <div style={{marginRight: '30px', width: '65%'}}><BlockchainComp  config={cur_state[2]} changeCurState={changeCurState} setLoading={setLoading} index={3}/></div>
-                <div style={{marginRight: '30px', width: '65%'}}><BlockchainComp  config={cur_state[3]} changeCurState={changeCurState} setLoading={setLoading} index={4}/></div>
-                <div style={{marginRight: '30px', width: '65%'}}><BlockchainComp  config={cur_state[4]} changeCurState={changeCurState} setLoading={setLoading} index={5}/></div>
+                <div style={{marginRight: '30px', minWidth: '75vh'}}><BlockchainComp  config={cur_state[0]} changeCurState={changeCurState} setLoading={setLoading} index={1} /></div>
+                <div style={{marginRight: '30px', minWidth: '75vh'}}><BlockchainComp  config={cur_state[1]} changeCurState={changeCurState} setLoading={setLoading} index={2}/></div>
+                <div style={{marginRight: '30px', minWidth: '75vh'}}><BlockchainComp  config={cur_state[2]} changeCurState={changeCurState} setLoading={setLoading} index={3}/></div>
+                <div style={{marginRight: '30px', minWidth: '75vh'}}><BlockchainComp  config={cur_state[3]} changeCurState={changeCurState} setLoading={setLoading} index={4}/></div>
+                <div style={{marginRight: '30px', minWidth: '75vh'}}><BlockchainComp  config={cur_state[4]} changeCurState={changeCurState} setLoading={setLoading} index={5}/></div>
                  </>
                  }
                 </div>
