@@ -58,8 +58,8 @@ const Blockchain = () => {
     
       async function getState(){
         setLoading(true);
-        await API.GetRequestApi(CONSTANTS.API_ENDPOINT.GET_BLOCKCHAIN, CONSTANTS.API_TIMEOUT_TYPE.SLOW_TIMEOUT).then((data)=>{changeCurState(data)}).catch(err=>console.log(err));
-        setLoading(false);
+        await API.GetRequestApi(CONSTANTS.API_ENDPOINT.GET_BLOCKCHAIN, CONSTANTS.API_TIMEOUT_TYPE.SLOW_TIMEOUT).then((data)=>{changeCurState(data) ;  setLoading(false);}).catch(err=>console.log(err));
+      
         }
 
      

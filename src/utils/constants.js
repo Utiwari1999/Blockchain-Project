@@ -6,7 +6,11 @@ export const API_ENDPOINT = {
    GET_NONCE: "/api/genesis_block/",
    GET_BLOCKCHAIN: "/api/blockchain",
    UPDATE_BLOCK: "/api/update_block/",
-   MINE_BLOCK: "/api/mine_block/"
+   MINE_BLOCK: "/api/mine_block/",
+   GET_DISTRIBUTED_BLOCKCHAIN: "/api/distributed_blockchain/",
+   UPDATE_DISTRIBUTED_BLOCK:"/api/update_block/",
+   MINE_DISTRIBUTED_BLOCK: "/api/mine_block/",
+
 
 }
 export const API_RESPONSE_STATUS = {
