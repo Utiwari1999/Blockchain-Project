@@ -2,7 +2,6 @@ import { Button, FormControl } from 'react-bootstrap';
 import React, { useState } from 'react'
 import sha256 from 'simple-sha256/index';
 import InputGroup from 'react-bootstrap/InputGroup'
-// const sha256 = require('simple-sha256');
 
 const Hash = () => {
 

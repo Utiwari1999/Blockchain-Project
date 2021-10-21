@@ -55,16 +55,9 @@ const BlockchainComp = (props) => {
         await API.PostRequestApi(CONSTANTS.API_ENDPOINT.UPDATE_BLOCK +props.index+'/',toSend, CONSTANTS.API_TIMEOUT_TYPE.SLOW_TIMEOUT).then((data)=>{props.changeCurState(data)}).catch(err=>console.log(err));
         props.setLoading(false);
         
-        // hashfind();
+    
     }
-    // async function hashfind () {
-    //     const hash = await sha256(inputTextValue2);
-    //     const newhash= await sha256(hash + (currBlock*currBlock + currNonce*currNonce).toString()+ '0'.repeat(64));
-    //     console.log(newhash);
-    //     sethashvalue(newhash);
-    //     console.log(hashvalue.substring(0, 4));
-    //   }
-
+ 
     async function mine(){
         var toSend={
             block_number: parseInt(currBlock),
