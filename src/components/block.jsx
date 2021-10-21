@@ -15,9 +15,18 @@ const Block = () => {
     window.onkeyup = keyup;
     var inputTextValue,inputTextValue1, inputTextValue2;
 
-    function keyup(e) {
+    async function keyup(e) {
+
         inputTextValue = e.target.value;
-        // setcurrBlock(inputTextValue);
+        setcurrBlock(inputTextValue);
+        
+        const hash = await sha256(currData);
+        console.log(inputTextValue,currNonce,currData);
+
+        const newhash= await sha256(hash + (inputTextValue*inputTextValue + currNonce*currNonce).toString()+ '0'.repeat(64));
+        sethashvalue(newhash);
+
+        console.log(currBlock,currNonce,hash);
     }
 
     function keyup1(e1) {
@@ -41,7 +50,7 @@ const Block = () => {
     async function mine(){
         var toSend=
         {
-        block_number : 1,
+        block_number : currBlock,
 		data : currData,
        };
        console.log(toSend);
