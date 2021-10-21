@@ -17,7 +17,11 @@ const Block = () => {
 
     async function keyup(e) {
 
-        inputTextValue = e.target.value;
+        if(e.target.id === 'block'){
+            inputTextValue = e.target.value;
+        }
+        console.log("h1 ut");
+        console.log(e);
         setcurrBlock(inputTextValue);
         
         const hash = await sha256(currData);
@@ -35,7 +39,11 @@ const Block = () => {
     }
 
     function keyup2(e2) {
-        inputTextValue2 = e2.target.value;
+        if (e2.target.id === 'data'){
+            inputTextValue2 = e2.target.value;
+        }
+        console.log("h1 ut 1");
+        console.log(e2);
         setcurrData(inputTextValue2);
         hashfind();
     }
@@ -68,7 +76,7 @@ const Block = () => {
             <div style={{background: hashvalue.substring(0, 4) === '0000' ? 'rgb(223, 240, 216)' : 'rgb(250, 220, 220)', padding: '35px', borderRadius: '5px'}}>
                 <InputGroup size="sm">
                     <InputGroup.Text>Block</InputGroup.Text>
-                    <FormControl onChange={keyup} name="block" value={currBlock} as="textarea" aria-label="With textarea" readonly />
+                    <FormControl id="block" value={currBlock} onChange={keyup} as="textarea" aria-label="With textarea" />
                 </InputGroup>
                 <br />
                 <InputGroup size="sm">
@@ -78,7 +86,7 @@ const Block = () => {
                 <br />
                 <InputGroup size="sm">
                     <InputGroup.Text>Data</InputGroup.Text>
-                    <FormControl value={currData} onChange={keyup2} rows="8" as="textarea" aria-label="With textarea" />
+                    <FormControl id="data" value={currData} onChange={keyup2} rows="8" as="textarea" aria-label="With textarea" />
                 </InputGroup>
                 <br />
                 <InputGroup size="sm">

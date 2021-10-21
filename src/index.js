@@ -5,7 +5,7 @@ import App from './App';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Header from './components/header';
 import Hash from './components/Hash';
-import Block from './components/block';
+import Block from './components/Block';
 import Blockchain from './components/Blockchain';
 import Distributed from './components/Distributed';
 import 'bootstrap/dist/css/bootstrap.css';
